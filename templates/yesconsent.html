@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} {% endblock %}</h1>
+
+    <h4>On the next page we're going to ask you some questions about yourself.</h4>
+	<h4>Don't worry, your answers will all be anonymised!</h4>
+
+	<a href="{{ url_for('about_page')}}"><input type=”button” value="Next" class="btn btn-primary"></a> 
+
+{% endblock %}

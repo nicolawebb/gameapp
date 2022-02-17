@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} E {% endblock %}</h1>
+     <form class="form-vertical">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Form Name</legend>
+
+
+<!-- Button (Double) -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="button1id">Consent</label>
+  <div class="col-md-8">
+    <a href="{{ url_for('yesconsent_page')}}"><input type=”button” value="I CONSENT" class="btn btn-success"></a> 
+    <a href="{{ url_for('noconsent_page')}}"><input type=”button” value="I DO NOT CONSENT" class="btn btn-danger"></a> 
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+{% endblock %}
