@@ -38,36 +38,11 @@ def bigfive_page():
 def how_page():
     return render_template('howtoplay.html')
 
-# import os
+@app.route('/missions', methods=['GET', 'POST'])
+def missions_page():
+    if request.method == 'POST':
+        print(request.get_json())  # parse as JSON
+        return redirect(url_for('about_page'))
+        # return 'Sucesss', 200
 
-# from flask import Flask
-# # from flask_sqlalchemy import SQLAlchemy
-
-# # db = SQLAlchemy()
-
-# def create_app(test_config=None):
-#     # create and configure the app
-#     # app = Flask(__name__, instance_relative_config=True)
-#     app = Flask(__name__)
-#     # app.config['SECRET_KEY'] = 'secret-key-goes-here'
-#     # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
-
-#     if test_config is None:
-#         # load the instance config, if it exists, when not testing
-#         app.config.from_pyfile('config.py', silent=True)
-#     else:
-#         # load the test config if passed in
-#         app.config.from_mapping(test_config)
-
-#     # ensure the instance folder exists
-#     try:
-#         os.makedirs(app.instance_path)
-#     except OSError:
-#         pass
-
-#     # a simple page that says hello
-#     @app.route('/hello')
-#     def hello():
-#         return 'Hello, World!'
-
-#     return app
+    return render_template('missions.html')

@@ -3,3 +3,25 @@
     padding: 10px;
     border-bottom: 1px solid Gainsboro;
 }
+
+.mission-no-btn {
+  background-color: Red; /* Blue background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 12px 16px; /* Some padding */
+  font-size: 16px; /* Set a font size */
+}
+
+.mission-yes-btn {
+  background-color: Green; /* Blue background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 12px 16px; /* Some padding */
+  font-size: 16px; /* Set a font size */
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+}
+

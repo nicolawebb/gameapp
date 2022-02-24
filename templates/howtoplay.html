@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>{% block title %} Bye {% endblock %}</h1>
+    <h1>{% block title %} {% endblock %}</h1>
+
+    <h4>Something something instructions.</h4>
+
+    <a href="{{ url_for('missions_page')}}"><input type=”button” value="Next" class="btn btn-primary"></a> 
+
 {% endblock %}
