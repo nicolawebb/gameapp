@@ -5,14 +5,15 @@
 
 <h1>{% block title %} Missions {% endblock %}</h1>
 
+
 <div class="card card text-center">
   <h5 class="card-header">Mission</h5>
   <div class="card-body">
     <h5 class="card-title">Group</h5>
-    <p class="card-text">Do something together.</p>
+    <p class="group-card-text1" id="group-card-text1">Do something together.</p>
     <div class="btn-group" role="group" aria-label="Basic example">
-        <button class="mission-yes-btn"><i class="fa fa-check"></i></button>  
-        <button class="mission-no-btn"><i class="fa fa-close"></i></button>  
+        <button class="group-mission-yes-btn1"><i class="fa fa-check"></i></button>  
+        <button class="group-mission-no-btn1"><i class="fa fa-close"></i></button>  
     </div>
 </div>
 </div>
@@ -21,10 +22,10 @@
   <h5 class="card-header">Mission</h5>
   <div class="card-body">
     <h5 class="card-title">Group</h5>
-    <p class="card-text">Do something together.</p>
+    <p class="group-card-text2" id="group-card-text2">Do something together.</p>
     <div class="btn-group" role="group" aria-label="Basic example">
-        <button class="mission-yes-btn"><i class="fa fa-check"></i></button>  
-        <button class="mission-no-btn"><i class="fa fa-close"></i></button>  
+        <button class="group-mission-yes-btn2"><i class="fa fa-check"></i></button>  
+        <button class="group-mission-no-btn2"><i class="fa fa-close"></i></button>  
     </div>
 </div>
 </div>
@@ -36,10 +37,10 @@
   <h5 class="card-header">Mission</h5>
   <div class="card-body">
     <h5 class="card-title">Individual</h5>
-    <p class="card-text">Do something together.</p>
+    <p class="indv-card-text1" id="indv-card-text1">Do something together.</p>
     <div class="btn-group" role="group" aria-label="Basic example">
-        <button class="mission-yes-btn"><i class="fa fa-check"></i></button>  
-        <button class="mission-no-btn"><i class="fa fa-close"></i></button>  
+        <button class="indv-mission-yes-btn1" id="indv-mission-yes-btn1"><i class="fa fa-check"></i></button>  
+        <button class="indv-mission-no-btn1"><i class="fa fa-close"></i></button>  
     </div>
 </div>
 </div>
@@ -48,13 +49,31 @@
   <h5 class="card-header">Mission</h5>
   <div class="card-body">
     <h5 class="card-title">Individual</h5>
-    <p class="card-text">Do something together.</p>
+    <p class="indv-card-text2" id="indv-card-text2">Do something together.</p>
     <div class="btn-group" role="group" aria-label="Basic example">
-        <button class="mission-yes-btn"><i class="fa fa-check"></i></button>  
-        <button class="mission-no-btn"><i class="fa fa-close"></i></button>  
+        <button class="indv-mission-yes-btn2"><i class="fa fa-check"></i></button>  
+        <button class="indv-mission-no-btn2"><i class="fa fa-close"></i></button>  
     </div>
 </div>
 </div>
 
+<div class="modal" id="timesupmodal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Time's Up!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Do something now :)</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 {% endblock %}

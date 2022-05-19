@@ -3,6 +3,12 @@
 {% block content %}
     <h1>{% block title %} {% endblock %}</h1>
 
+{% if session.name %}
+      You are Register {{ session.name }}
+   {% else %}
+      You are not Register
+{% endif %}
+
     <h4>On the next page we're going to ask you some questions about yourself.</h4>
 	<h4>Don't worry, your answers will all be anonymised!</h4>
 

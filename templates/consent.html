@@ -1,18 +1,51 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>{% block title %} E {% endblock %}</h1>
-     <form class="form-vertical">
+    <h1>{% block title %} Please read the following {% endblock %}</h1>
+<div class="scroll">
+
+
+<legend>Participant Information</legend>
+<p>You are invited to take part in research taking place at the University of the West of England, Bristol. Before you decide whether to take part, it is important for you to understand why the study is being done and what it will involve. Please read the following information carefully and if you have any queries or would like more information please contact the researchers using the contact information provided. 
+<br><br>
+In this study, you will be asked to play a game in which you will be asked to complete a series of 'misisons' as a group. The whole study will take approximately 20 minutes to complete, however you are free to leave the study at any point if you wish. 
+<br><br>
+The data we are collecting during the study includes some basic demographic information and a quick personality test. We will also be recording analytics during your gameplay, including visual and audio recordings.
+<br><br>
+There are no direct risks for you for participating in this study and your participation in this study is completely voluntary. If you decide that you no longer wish to partake in the study, you are free to withdraw at any time during the session. If you wish to withdraw your data from the study after completion, please contact the lead researcher using the details below, referencing your prolific identification number and it will be removed. 
+<br><br>
+Your involvement in the study will be kept confidential. This information will only be available to the research staff involved in the project and those within their study group. Your study data will be anonymised. This means that it will be given an identification number and any identifying information about you will be removed. Therefore, it will not be possible to identify you by name from any aspect of documentation or reporting for this research study. 
+<br><br>
+This research has been approved by the Faculty of Environment and Technology research ethics committee at the University of the West of England in Bristol. If you have any concerns or would like further information about the study, please contact Nicola Webb at nicola.webb@brl.ac.uk. 
+Please ensure that you have read and understood the information you were shown previously and asked any questions before you give your consent.  If you have any questions please contact a member of the research team, whose details are set out above.  
+<br><br>
+ 
+By giving your full consent to the participation in this study, you agree that you: 
+<ul>
+    <li>Have received enough information that would allow you to make an informed decision;</li>
+    <li>Have been given the opportunity to ask questions about the study; </li>
+    <li>Have had my questions answered satisfactorily by the research team if necessary; </li>
+    <li>Agree that anonymised quotes may be used in the final report of this study; </li>
+    <li>Understand that my participation is voluntary and that I am free to withdraw at any time until the data has been anonymised, without giving a reason; </li>
+    <li>Am aware that in-game behaviour will be recording during the study; </li>
+    <li>Am aware that data collected will be anonymised, and will be viewed and analysed; </li>
+    <li>Understand anonymised data from the study will be shared online within the academic research community; </li>
+    <li>Have freely volunteered to participate in this study </li>
+</ul>
+ </p>
+
+</div>
+<!-- {% if session.name %}
+      You are Register {{ session.name }}
+   {% else %}
+      You are not Register
+{% endif %} -->
+
 <fieldset>
-
-<!-- Form Name -->
-<legend>Form Name</legend>
-
-
-<!-- Button (Double) -->
+<form class="form-vertical">
 <div class="form-group">
-  <label class="col-md-4 control-label" for="button1id">Consent</label>
-  <div class="col-md-8">
+  <label class="consent" for="button1id">Please select from the options below:</label>
+  <div>
     <a href="{{ url_for('yesconsent_page')}}"><input type=”button” value="I CONSENT" class="btn btn-success"></a> 
     <a href="{{ url_for('noconsent_page')}}"><input type=”button” value="I DO NOT CONSENT" class="btn btn-danger"></a> 
   </div>

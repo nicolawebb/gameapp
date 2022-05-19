@@ -2,13 +2,13 @@
 
 {% block content %}
 <h1>{% block title %} About You {% endblock %}</h1>
-<form>
+<form class="about-form">
 	<div class="form-group w-25 p-3">
 
 		<label for="age">Age</label>
 		<input type="text" class="form-control w-25 p-3" id="age">
 
-		<label for="country">Nationality</label>
+		<label for="country">Coutry of Residence</label>
 		<select class="selectpicker countrypicker form-control" data-default="GB" id="country"></select>
 
 		<label for="gender">Gender</label>
@@ -24,8 +24,8 @@
 			</div>
 		</div>
 	</div>
+<a href="{{ url_for('bigfive_page')}}"><input type=”button” value="Next" class="btn btn-primary"></a> 
 </div>
-<a href="{{ url_for('bigfive_page')}}"><input type=”button” value="Next" class="btn btn-success"></a> 
 
 </form>
 

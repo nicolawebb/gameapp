@@ -1,10 +1,12 @@
 .question{
     text-align: left;
-    padding: 10px;
-    border-bottom: 1px solid Gainsboro;
+    padding: 20px;
+    border-bottom: 2px solid Gainsboro;
+    font-size: 20px;
 }
 
-.mission-no-btn {
+
+.indv-mission-no-btn1, .indv-mission-no-btn2, .group-mission-no-btn1, .group-mission-no-btn2{
   background-color: Red; /* Blue background */
   border: none; /* Remove borders */
   color: white; /* White text */
@@ -12,7 +14,7 @@
   font-size: 16px; /* Set a font size */
 }
 
-.mission-yes-btn {
+.indv-mission-yes-btn1, .indv-mission-yes-btn2, .group-mission-yes-btn1, .group-mission-yes-btn2 {
   background-color: Green; /* Blue background */
   border: none; /* Remove borders */
   color: white; /* White text */
@@ -20,8 +22,30 @@
   font-size: 16px; /* Set a font size */
 }
 
+
 /* Darker background on mouse-over */
 .btn:hover {
   background-color: RoyalBlue;
 }
 
+.about-form{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.submit{
+  padding-top: 10px;
+  text-align: center;
+}
+
+.scroll{
+  overflow-y: scroll;
+  height: 500px;
+  border: 1px solid Gainsboro;
+  padding: 15px;
+}
+
+.consent{
+  font-size: 20px;
+  padding-top: 20px;
+}

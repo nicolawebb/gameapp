@@ -3,8 +3,10 @@
 {% block content %}
 <h1>{% block title %} Welcome {% endblock %}</h1>
 
-   <label for="name">Enter Name</label>
-   <input type="text" class="w-25 p-3" id="name">
-   <p align="center"><a href="{{ url_for('consent_page')}}"><button type="”button”" class="btn btn-primary">Next</button></p>
+   <form method="POST">
+      <label for="name">Enter Name</label>
+      <input type="text" class="w-25 p-3" name="name" id="name">
+      <p align="center"><a href="{{ url_for('consent_page')}}"><button type="”button”" class="btn btn-primary name-button">Next</button></p>
+   </form>
 
 {% endblock %}
