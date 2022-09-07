@@ -1,48 +1,73 @@
+total = 0
 $(document).ready(function(){
   startTimer();
-  $('#timer').text(10 + ":" + 0);
+  setStartMissions();
+  $('#timer').text(60 + ":" + 0);
   
 
   $(".indv-mission-yes-btn1").click(function(){
     passedIndvMission(1);
+    updateScore(3)
   });
 
   $(".indv-mission-yes-btn2").click(function(){
     passedIndvMission(2);
+    updateScore(3)
   });
 
   $(".group-mission-yes-btn1").click(function(){
     passedGroupMission(1);
+    updateScore(3)
   });
 
   $(".group-mission-yes-btn2").click(function(){
     passedGroupMission(2);
+    updateScore(3)
   });
 
   $(".indv-mission-no-btn1").click(function(){
     skipIndvMission(1);
+    updateScore(-3)
   });
 
   $(".indv-mission-no-btn2").click(function(){
     skipIndvMission(2);
+    updateScore(-3)
   });
 
   $(".group-mission-no-btn1").click(function(){
     skipGroupMission(1);
+    updateScore(-3)
   });
 
   $(".group-mission-no-btn2").click(function(){
     skipGroupMission(2);
+    updateScore(-3)
   });
 
   // $(".name-button").click(function(){
   //   alert("df");
   // });
+
+
  
 });
 
+function updateScore(points){
+    total += points
+    $('#score').text(total);
+    console.log(total)
+}
 
 
+function setStartMissions(){
+  var item1 = indvitems[Math.floor(Math.random()*indvitems.length)];
+  var item2 = indvitems[Math.floor(Math.random()*indvitems.length)];
+  $('#indv-card-text1').text(item1);
+  $('#indv-card-text2').text(item2);
+  $('#group-card-text1').text("Everyone give a 10 second introduction");
+  $('#group-card-text2').text("Go to room 1");
+}
 
 
 function startTimer() {
@@ -56,7 +81,7 @@ function startTimer() {
     }
 
     $('#timer').text(m + ":" + s);
-    console.log(m)
+    // console.log(m)
   setTimeout(startTimer, 1); //1000
   onEnd(presentTime);
 }
@@ -89,10 +114,16 @@ function onEnd(timerText){
   }
 }
 
-var items = Array("Mission 1", "Mission 2", "Mission 3", "Mission 4");
+var indvitems = Array("Go to room 1", "Go to room 2", "Go to room 3", "Go to room 4", "Bring one person to a different room", 
+  "Get everyone into the same room as you", "Get everyone to leave the room you are in", "Speak to someone you haven't spoken to yet",
+  "Bring one person to room 1", "Bring one person to room 2", "Bring one person to room 3", "Bring one person to room 4", "Bring one person to room 4",
+  "Distract someone from their task");
+
+var groupitems1 = Array("Find X item", "Mission 3", "Mission 4");
+var groupitems2 = Array("Speak to the Pepper Robot", "Mission 3", "Mission 4");
 
 function passedIndvMission(cardID){
-  var item = items[Math.floor(Math.random()*items.length)];
+  var item = indvitems[Math.floor(Math.random()*indvitems.length)];
   new_text = item
 
   if(cardID==1){
@@ -105,22 +136,21 @@ function passedIndvMission(cardID){
   }
 }
 
+count1 = 0
+count2 = 0
 function passedGroupMission(cardID){
-  var item = items[Math.floor(Math.random()*items.length)];
-  new_text = item
-
   if(cardID==1){
-    $('#group-card-text1').text(new_text);
-
+    $('#group-card-text1').text(groupitems1[count1]);
+    count1++
   }
-  else if(cardID==2){
-    $('#group-card-text2').text(new_text);
-
+  if(cardID==2){
+    $('#group-card-text2').text(groupitems2[count2]);
+    count2++
   }
 }
 
 function skipIndvMission(cardID){
-  var item = items[Math.floor(Math.random()*items.length)];
+  var item = indvitems[Math.floor(Math.random()*indvitems.length)];
   new_text = item
 
   if(cardID==1){
@@ -134,15 +164,12 @@ function skipIndvMission(cardID){
 }
 
 function skipGroupMission(cardID){
-  var item = items[Math.floor(Math.random()*items.length)];
-  new_text = item
-
   if(cardID==1){
-    $('#group-card-text1').text(new_text);
-
+    $('#group-card-text1').text(groupitems1[count1]);
+    count1++
   }
-  else if(cardID==2){
-    $('#group-card-text2').text(new_text);
-
+  if(cardID==2){
+    $('#group-card-text2').text(groupitems2[count2]);
+    count2++
   }
 }

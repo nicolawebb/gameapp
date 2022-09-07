@@ -1,12 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>{% block title %} Welcome {% endblock %}</h1>
+    <h1>{% block title %} Welcome! {% endblock %}</h1>
 
-   <form method="POST">
-      <label for="name">Enter Name</label>
-      <input type="text" class="w-25 p-3" name="name" id="name">
-      <p align="center"><a href="{{ url_for('consent_page')}}"><button type="”button”" class="btn btn-primary name-button">Next</button></p>
-   </form>
+   <h4>Please click the button below to get started</h4>
+
+   <a href="{{ url_for('login_page')}}"><input type=”button” value="Next" class="btn btn-primary"></a> 
 
 {% endblock %}

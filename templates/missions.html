@@ -5,6 +5,7 @@
 
 <h1>{% block title %} Missions {% endblock %}</h1>
 
+<p id="score"></p>
 
 <div class="card card text-center">
   <h5 class="card-header">Mission</h5>
@@ -67,10 +68,12 @@
         </button>
       </div>
       <div class="modal-body">
-        <p>Do something now :)</p>
+        <p>Click 'Next' to submit your score!</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+        <p align="center"><a href="{{ url_for('thankyou_page')}}"><button type="”button”" class="btn btn-primary name-button">Next</button></p>
+
       </div>
     </div>
   </div>

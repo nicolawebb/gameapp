@@ -3,34 +3,33 @@
 {% block content %}
 <h1>{% block title %} About You {% endblock %}</h1>
 <form class="about-form">
-	<div class="form-group w-25 p-3">
+	<div class="form-group">
+	    <div class="form-group col-md-2">	
+			<label for="age">Age</label>
+			<input type="text" class="form-control age" id="age" required>
+		</div>
+	    <div class="form-group col-md-4">		
+	    	<label for="country">Coutry of Residence</label>
+			<select class="selectpicker countrypicker form-control" data-default="GB" id="country"></select>
+		</div>
+		<div class="form-group col-md-4">	
+			<label for="gender">Gender</label>
+			<div class="dropdown">
+				<button class="btn btn-secondary dropdown-toggle" type="button" id="gender" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Select</button>
+				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					<a class="dropdown-item" href="#">Male</a>
+					<a class="dropdown-item" href="#">Female</a>
+					<a class="dropdown-item" href="#">Other</a>
+					<a class="dropdown-item" href="#">Prefer not to say</a>
 
-		<label for="age">Age</label>
-		<input type="text" class="form-control w-25 p-3" id="age">
-
-		<label for="country">Coutry of Residence</label>
-		<select class="selectpicker countrypicker form-control" data-default="GB" id="country"></select>
-
-		<label for="gender">Gender</label>
-		<div class="dropdown">
-			<button class="btn btn-secondary dropdown-toggle" type="button" id="gender" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			Select</button>
-			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				<a class="dropdown-item" href="#">Male</a>
-				<a class="dropdown-item" href="#">Female</a>
-				<a class="dropdown-item" href="#">Other</a>
-				<a class="dropdown-item" href="#">Prefer not to say</a>
-
+				</div>
 			</div>
 		</div>
+			<a href="{{ url_for('bigfive_page')}}"><input type=”button” value="Next" class="btn btn-primary submit"></a> 
 	</div>
-<a href="{{ url_for('bigfive_page')}}"><input type=”button” value="Next" class="btn btn-primary"></a> 
 </div>
-
 </form>
-
-
-
 
 
 <script>

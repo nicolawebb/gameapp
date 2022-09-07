@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>{% block title %} Please read the following {% endblock %}</h1>
+
+<h1>{% block title %} Please read the following {% endblock %}</h1>
+
 <div class="scroll">
 
 
@@ -12,7 +14,7 @@ In this study, you will be asked to play a game in which you will be asked to co
 <br><br>
 The data we are collecting during the study includes some basic demographic information and a quick personality test. We will also be recording analytics during your gameplay, including visual and audio recordings.
 <br><br>
-There are no direct risks for you for participating in this study and your participation in this study is completely voluntary. If you decide that you no longer wish to partake in the study, you are free to withdraw at any time during the session. If you wish to withdraw your data from the study after completion, please contact the lead researcher using the details below, referencing your prolific identification number and it will be removed. 
+There are no direct risks for you for participating in this study and your participation in this study is completely voluntary. If you decide that you no longer wish to partake in the study, you are free to withdraw at any time during the session. If you wish to withdraw your data from the study after completion, please contact the lead researcher using the details below, referencing the name, date and time of the experiment and it will be removed. 
 <br><br>
 Your involvement in the study will be kept confidential. This information will only be available to the research staff involved in the project and those within their study group. Your study data will be anonymised. This means that it will be given an identification number and any identifying information about you will be removed. Therefore, it will not be possible to identify you by name from any aspect of documentation or reporting for this research study. 
 <br><br>
@@ -35,11 +37,6 @@ By giving your full consent to the participation in this study, you agree that y
  </p>
 
 </div>
-<!-- {% if session.name %}
-      You are Register {{ session.name }}
-   {% else %}
-      You are not Register
-{% endif %} -->
 
 <fieldset>
 <form class="form-vertical">
@@ -53,5 +50,7 @@ By giving your full consent to the participation in this study, you agree that y
 
 </fieldset>
 </form>
+
+
 
 {% endblock %}
