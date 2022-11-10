@@ -7,14 +7,12 @@ import json
 import io, csv
 import datetime
 from numpy import random
+from flask.sessions import SecureCookieSessionInterface
 
 
 app = Flask(__name__)
-app.secret_key = os.urandom(24)
-# app.config["SESSION_TYPE"] = "filesystem"
-# app.config['SESSION_COOKIE_SAMESITE'] = "Lax"
-# app.config['SESSION_COOKIE_SECURE'] = "True"
-# app.config['REMEMBER_COOKIE_SECURE'] = "True"
+app.config['SECRET_KEY'] = 'oh_so_secret'
+session_cookie = SecureCookieSessionInterface().get_signing_serializer(app)
 
 
 @app.route('/')
@@ -36,9 +34,8 @@ def loginresult():
         session['age'] = request.form['age']
         session['country'] = request.form['country']
         session['gender'] = request.form['gender']
-
         data = []
-        p_id = num
+        p_id = str(num)
         helmet = session['helmet']
         name = session['name']
         age = session['age']
@@ -46,12 +43,15 @@ def loginresult():
         gender = session['gender']
         data.extend([str(p_id), helmet, name, age, country, gender])
         print(p_id)
-        session["p_id2"] = p_id
+        session["p_id"] = p_id
+        # print(session["uid"])
+        print(session)
 
-        csv_path = r"/home/n23-webb/gameapp/data/logs.csv"
-        with open(csv_path, 'a') as f:
-            f.write(",".join(data))
-            f.write("\n")
+
+        # csv_path = r"/home/n23-webb/gameapp/data/logs.csv"
+        # with open(csv_path, 'a') as f:
+        #     f.write(",".join(data))
+        #     f.write("\n")
 
         return redirect(url_for('consent_page'))
     return redirect(url_for('consent_page'))
@@ -63,6 +63,7 @@ def help_page():
 
 @app.route('/consent')
 def consent_page():
+    print(session["p_id"])
     return render_template('consent.html')
 
 @app.route('/noconsent')
@@ -71,12 +72,14 @@ def noconsent_page():
 
 @app.route('/yesconsent', methods=['GET', 'POST'])
 def yesconsent_page():
+    print(session["p_id"])
     return render_template('yesconsent.html')
 
 @app.route('/bigfive', methods=['GET', 'POST'])
 def bigfive_page():
     # print(session['omfgwork'])
     if request.method == 'POST':
+        # print(session["p_id"])
         return redirect(url_for('how_page'))
     return render_template('bigfive.html')
 
@@ -89,10 +92,23 @@ def big_five_results():
     for i in result:
         # print(result[i])
         bah.extend(result[i])
-    p_id = session.get("p_id2")
-    bah.insert(0,str(p_id))
-    # data.extend([str(p_id), result])
-    print(bah)
+    # p_id = session.get("p_id")
+    # bah.insert(0,str(p_id))
+
+
+    print(session)
+    # print(session["p_id"])
+
+    helmet = session['helmet']
+    name = session['name']
+    age = session['age']
+    country = session['country']
+    gender = session['gender']
+    p_id = session['p_id']
+    bah.extend([str(p_id), helmet, name, age, country, gender])
+    print(p_id)
+
+    # print(session["p_id2"])
 
     csv_path = r"/home/n23-webb/gameapp/data/big5.csv"
     with open(csv_path, 'a') as f:

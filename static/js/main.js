@@ -116,11 +116,13 @@ function onEnd(timerText){
 
 var indvitems = Array("Go to room 1", "Go to room 2", "Go to room 3", "Go to room 4", "Bring one person to a different room", 
   "Get everyone into the same room as you", "Get everyone to leave the room you are in", "Speak to someone you haven't spoken to yet",
-  "Bring one person to room 1", "Bring one person to room 2", "Bring one person to room 3", "Bring one person to room 4", "Bring one person to room 4",
-  "Distract someone from their task");
+  "Bring one person to room 1", "Bring one person to room 2", "Bring one person to room 3", "Bring one person to room 4", "Bring two people to room 4",
+  "Distract someone from their task", "Get two people to talk to each other", "Don't say anything for 1 minute", "Don't move for 1 minute", "Make someone laugh",
+  "Lie to someone", "Announce to the group how much time is remaining", "Ask someone what they are doing at the weekend", "");
 
-var groupitems1 = Array("Find X item", "Mission 3", "Mission 4");
-var groupitems2 = Array("Speak to the Pepper Robot", "Mission 3", "Mission 4");
+var groupitems1 = Array("Go to room 1 and play one of the games on the cards", "Tidy room 2", "Tell Pepper...", "In room 4: debate one of the topics on the cards");
+var groupitems2 = Array("Make the Pepper Robot laugh with a joke", "In room 4: debate one of the topics on the cards", 
+  "Go to room 1 and play one of the games on the cards");
 
 function passedIndvMission(cardID){
   var item = indvitems[Math.floor(Math.random()*indvitems.length)];
