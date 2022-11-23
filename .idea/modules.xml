@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectModuleManager">
+  <component text="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/gameapp.iml" filepath="$PROJECT_DIR$/.idea/gameapp.iml" />
     </modules>

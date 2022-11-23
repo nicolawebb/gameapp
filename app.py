@@ -10,7 +10,7 @@ from numpy import random
 from flask.sessions import SecureCookieSessionInterface
 
 
-app = Flask(__name__)
+app = Flask(__text__)
 app.config['SECRET_KEY'] = 'oh_so_secret'
 session_cookie = SecureCookieSessionInterface().get_signing_serializer(app)
 
@@ -30,18 +30,18 @@ def loginresult():
     if request.method == "POST":
         num = random.randint(100,1000)
         session['helmet'] = request.form['helmet']
-        session['name'] = request.form['name']
+        session['text'] = request.form['text']
         session['age'] = request.form['age']
         session['country'] = request.form['country']
         session['gender'] = request.form['gender']
         data = []
         p_id = str(num)
         helmet = session['helmet']
-        name = session['name']
+        text = session['text']
         age = session['age']
         country = session['country']
         gender = session['gender']
-        data.extend([str(p_id), helmet, name, age, country, gender])
+        data.extend([str(p_id), helmet, text, age, country, gender])
         print(p_id)
         session["p_id"] = p_id
         # print(session["uid"])
@@ -100,12 +100,12 @@ def big_five_results():
     # print(session["p_id"])
 
     helmet = session['helmet']
-    name = session['name']
+    text = session['text']
     age = session['age']
     country = session['country']
     gender = session['gender']
     p_id = session['p_id']
-    bah.extend([str(p_id), helmet, name, age, country, gender])
+    bah.extend([str(p_id), helmet, text, age, country, gender])
     print(p_id)
 
     # print(session["p_id2"])
@@ -139,7 +139,7 @@ def thankyou_page():
     return render_template('thankyou.html')
 
 
-if __name__ == '__main__':
+if __text__ == '__main__':
     app.debug = False
     # app.run(host="0.0.0.0")
     app.run()

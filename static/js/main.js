@@ -45,7 +45,7 @@ $(document).ready(function(){
     updateScore(-3)
   });
 
-  // $(".name-button").click(function(){
+  // $(".text-button").click(function(){
   //   alert("df");
   // });
 
