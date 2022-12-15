@@ -2,35 +2,30 @@
 
 {% block content %}
 <h1>{% block title %} Welcome {% endblock %}</h1>
-<h4>To get started, please enter a nicktext and fill out some demographic information!</h4>
+<h4>To get started, please enter a nickname and fill out some demographic information!</h4>
 
 
 <form class="about-form" action="{{ url_for('loginresult') }}" method="post">
    <!-- <div class="form-group"> -->
       <div class="form-group col-md-2">  
          <label for="helmet">Helmet No.</label>
-         <input type="text" class="form-control helmet" id="helmet" text="helmet" required>
-      </div>
-
-      <div class="form-group col-md-2">  
-         <label for=text>Enter text</label>
-         <input type="text" class="form-control" text=text id=text required>
+         <input type="name" class="form-control helmet" id="helmet" name="helmet" required>
       </div>
 
        <div class="form-group col-md-2">  
          <label for="age">Age</label>
-         <input type="text" class="form-control age" id="age" text="age" required>
+         <input type="name" class="form-control age" id="age" name="age" required>
       </div>
 
        <div class="form-group col-md-4">     
          <label for="country">Culture you identify with</label>
-         <select class="form-control" id="country" name="country"></select>
+         <select class="selectpicker countrypicker" id="country" name="country" data-default="GB"></select>
         </div>
 
       <div class="form-group col-md-2">   
          <label for="gender">Gender</label>
          <div class="dropdown">
-           <select text="gender" class="form-control" id=gender required>
+           <select name="gender" class="form-control" id=gender required>
               <option value="other">Other</option>
               <option value="female">Female</option>
               <option value="male">Male</option>
@@ -43,7 +38,10 @@
   <button type="submit" class="btn btn-primary submit">Submit</button></form>
 </div>
 
+<script>
+$('.countrypicker').countrypicker();
+</script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="/gameapp/static/js/login.js"></script>
+<!-- <script src="/gameapp/static/js/login.js"></script> -->
 {% endblock %}

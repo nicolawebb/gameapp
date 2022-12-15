@@ -2,7 +2,7 @@ total = 0
 $(document).ready(function(){
   startTimer();
   setStartMissions();
-  $('#timer').text(60 + ":" + 0);
+  $('#timer').text(600 + ":" + 0);
   
 
   $(".indv-mission-yes-btn1").click(function(){
